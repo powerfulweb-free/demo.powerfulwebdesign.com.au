@@ -1,0 +1,19 @@
+.c-contact-form {
+  &__row {
+    @extend .row;
+    
+    padding-top: 0 !important;
+  }
+
+  &__col {
+    @extend .col-lg-6;
+  }
+
+  &__group {
+    @extend .pb-3;
+
+    textarea {
+      @extend .h-100;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "..\\..\\..\\..\\Users\\Sean\\AppData\\Local\\Temp\\hugo_cache\\modules\\filecache\\modules\\pkg\\mod\\github.com\\powerfulweb\\hugo-common@v1.3.31\\assets\\*"
+   ]
+  }
+ }
+}

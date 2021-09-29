@@ -1,0 +1,59 @@
+{
+  "name": "@powerfulweb/demo.powerfulwebdesign.com.au",
+  "description": "business website",
+  "author": "powerfulwebdesign.com.au",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powerfulweb/demo.powerfulwebdesign.com.au.git"
+  },
+  "private": "true",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "@popperjs/core": "^2.9.1",
+    "autoprefixer": "^9.8.6",
+    "bootstrap": "^5.0.0-beta3",
+    "isotope-layout": "^3.0.6",
+    "lazysizes": "^5.3.0",
+    "masonry-layout": "^4.2.2",
+    "@fullhuman/postcss-purgecss": "^4.0",
+    "hugo-installer": "^3.1",
+    "purgecss-whitelister": "^2.4",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "swiper": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32",
+    "exec-bin": "^1.0.0",
+    "markdownlint-cli": "^0.28",
+    "npm-check": "^5.9.2",
+    "shx": "^0.3.3",
+    "standard-version": "^9.3.1",
+    "stylelint": "^13.13",
+    "stylelint-config-standard": "^22.0"
+  },
+  "otherDependencies": {
+    "hugo": "0.88.1"
+  },
+  "scripts": {
+    "git-init": "shx rm -rf .git && git init",
+    "dev": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender --gc",
+    "dev:preview": "npm run dev --buildDrafts --buildFuture",
+    "build": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo --gc --minify",
+    "build:preview": "npm run build --buildDrafts --buildFuture",
+    "start": "shx rm -rf public && hugo server --disableFastRender --renderToDisk",
+    "starth:preview": "npm run start --buildDrafts --buildFuture",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
+    "lint:scripts": "eslint assets/js config functions",
+    "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
+    "lint:markdown": "markdownlint *.md content/**/*.md",
+    "npm-check": "npx npm-check -u",
+    "hugo-version": "exec-bin node_modules/.bin/hugo/hugo version",
+    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
+    "release": "standard-version"
+  }
+}

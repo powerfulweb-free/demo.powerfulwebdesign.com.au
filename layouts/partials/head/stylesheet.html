@@ -1,0 +1,12 @@
+
+{{ partial "head/libsass" "scss/index.scss" }}
+
+{{/* partial "scripts/libsass" "scss/vendors.scss" */}}
+
+<!-- Page specific css file -->
+{{/*  
+{{ if eq .Type "gallery" }}
+{{ partial "scripts/libsass" "scss/gallery.scss" }}
+{{ end }}   */}}
+
+{{ partial "components/snipcart/3.2.0/stylesheet" . }}  

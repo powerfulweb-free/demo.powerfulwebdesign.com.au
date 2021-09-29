@@ -1,0 +1,202 @@
+{{ define "main" }}
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+  }
+
+  .swiper-slide-container {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 100%;
+    max-width: 600px;
+    margin: auto;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .gallery-top {
+    height: 80%;
+    width: 100%;
+  }
+  .gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .gallery-thumbs .swiper-slide {
+    width: 20%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+  }
+</style>
+
+
+<div class="container">
+  
+  <!-- <div style="margin-bottom: 5rem"></div> -->
+  
+  <div class="row">
+    <div class="col-6">
+      {{ partial "components/c-breadcrumbs" . }}
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+      <div class="">
+        <a href="#" class="position-relative snipcart-checkout">
+          <div class="o-svg o-svg--primary o-svg--lg p-0 m-0">
+            <div class="mx-3 my-3">
+            {{ partial "svg-font" (dict "svg" "icons/bootstrap/cart-fill" ) }}
+          </div>
+            <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary px-2 text-white snipcart-items-count">0<span class="visually-hidden">Cart Contents</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <H3>{{ .Title }}</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        <div class="swiper-container gallery-top">
+          <div class="swiper-wrapper">
+            {{ $ctx := . }}
+            {{ range .Params.image }}
+            <div class="swiper-slide">
+              <div class="swiper-slide-container">
+                {{ partial "image" (dict "page" $ctx "src" .name )}}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper-container gallery-thumbs">
+          <div class="swiper-wrapper">
+            {{ range .Params.image }}
+            <div class="swiper-slide">
+              <div class="swiper-slide-container">
+                {{ partial "image" (dict "page" $ctx "src" .name )}}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 pt-3">
+      
+      <div class="description pb-2">
+        <div class="text-muted">Description:</div>
+      
+      {{ .Content | markdownify }}
+      </div>
+      {{ with .Params.price }}
+      <div class="size pb-2">
+        <div class="text-muted">Price:</div>
+        ${{ . }} inc GST
+      </div>
+      {{ end }}
+      {{ with .Params.size }}
+      <div class="size pb-2">
+        <div class="text-muted">Size:</div>
+        {{ . }}
+      </div>
+      {{ end }}
+      {{ with .Params.brand }}
+      <div class="brand pb-2">
+        <div class="text-muted">Brand:</div>
+        {{ . }}
+      </div>
+      {{ end }}
+      <div class="snip pb-2">
+        <button class="snipcart-add-item btn btn-primary"
+        data-item-id="{{ .Params.title }}"
+        data-item-price="{{ .Params.price }}"
+        data-item-url="{{ .RelPermalink }}"
+        data-item-description="{{ .Description }}"
+        {{ $image := "" }}
+        {{ range first 1 .Params.image }}
+        {{ $image = .RelPermalink }}
+        {{ end }}
+        data-item-image="{{ $image }}"
+        data-item-name="{{ .Params.title }}"
+        >
+        Buy Now
+      </button>
+      </div>
+      {{/*  <form
+        target="paypal"
+        action="https://www.paypal.com/cgi-bin/webscr"
+        method="post"
+      >
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input
+          type="hidden"
+          name="hosted_button_id"
+          value="{{ .Params.paypalId }}"
+        />
+        <input
+          type="image"
+          src="https://www.paypalobjects.com/en_AU/i/btn/btn_cart_LG.gif"
+          border="0"
+          name="submit"
+          alt="PayPal – The safer, easier way to pay online!"
+        />
+        <img
+          alt=""
+          border="0"
+          src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif"
+          width="1"
+          height="1"
+        />
+      </form>  */}}
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    loopedSlides: 4,
+  });
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    loop: true,
+    loopedSlides: 4,
+  });
+  galleryTop.controller.control = galleryThumbs;
+  galleryThumbs.controller.control = galleryTop;
+</script>
+{{ end }}

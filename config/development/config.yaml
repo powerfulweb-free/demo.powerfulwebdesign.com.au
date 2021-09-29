@@ -1,0 +1,2 @@
+module:
+  replacements: "github.com/future-wd/hugo-image -> ../../../future-wd/hugo-image"

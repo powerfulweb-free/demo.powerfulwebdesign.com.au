@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="page section">
+  <div class="container">
+    <div class="row">
+      <h2 class="page__title " data-aos="fade-up">{{ .Title }}</h2>
+      {{ with .Params.subTitle }}
+        <div class="page__subtitle">{{ . | markdownify}}</div>
+      {{ end }}
+    </div>
+    {{ with .Content }}
+    <div class="row">
+      <div class="page__content">
+        {{ . | markdownify }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

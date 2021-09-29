@@ -1,0 +1,68 @@
+title: "Powerful Web Design"
+
+module:
+  #replacement in dev folder
+  imports:
+    - path: "github.com/powerfulweb/hugo-common" 
+    - path: "github.com/future-wd/hugo-image"
+    - path: "github.com/future-wd/hugo-svg-font"
+baseurl: "https://demo.powerfulwebdesign.com.au"
+
+#buildDrafts: true #(false)
+#buildExpired: true #(false)
+#buildFuture: true #(false)
+
+#defaultContentLanguage: "en"  #default en
+#Content without language indicator will default to this language.
+#defaultContentLanguageInSubdir: true #(false)
+#Render the default content language in subdir, e.g. content/en/. The site root / will then redirect to /en/.
+
+#disableAliases #(false) Will disable generation of alias redirects.
+# removes rss feed, and taxonomy/categories folders
+disableKinds: ["RSS", "taxonomy", "taxonomyTerm"]
+#disablePathToLower (false)
+#enableEmoji: true  #default false
+#enableGitInfo: true # default false  Enable .GitInfo object for each page
+# This will then update the Lastmod parameter for each page using the last git commit date for that content file.
+#enableInlineShortcodes (false)
+enableRobotsTXT: true # (false)
+googleAnalytics: ""
+languageCode: "en-AU" # needs hyphen e.g. en-AU
+# use {{ substr .Site.LanguageCode 0 2 }} to get the first 2 letters e.g. en
+languageName: "English"
+#disableLanguages
+
+#log (false)
+# logFile ("")
+# Log File path (if set, logging enabled automatically).
+
+# paginate: 7
+# paginatePath #(“page”)
+#pluralizeListTitles #(true)
+# rssLimit: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true #enable for inline html
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+#[taxonomies]
+# category: "categories"
+
+taxonomies:
+  series: series   # for fb og see also links
+
+#[permalinks]
+# blog: "/:title/"
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+@include media-breakpoint-down(sm) {
+
+  //below MD (mobile footer)
+  main {
+    section:last-of-type {
+      .row:last-of-type {
+        padding-bottom: 5rem; //Top of page margin (inside first section's container), does not affect background colours (bumps below sticky header)
+      }
+    }
+  }
+}

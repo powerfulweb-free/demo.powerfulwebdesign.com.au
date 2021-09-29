@@ -1,0 +1,125 @@
+treatments:
+  - title: Laser Hair Removal
+    draft: false
+    categories:
+      - title: Upper Body
+        draft: false
+        items:
+          - title: Full Face
+            draft: false
+            price: 50
+            online: 30
+            online3: 27
+          - title: Side of Face
+            draft: false
+            price: 33
+            online: 20
+            online3: 17
+          - title: Face & Neck
+            price: 59
+            online: 35.4
+            online3: 30
+          - title: Lip
+            price: 15
+            online: 8
+            online3: 8
+          - title: Chin
+            price: 15
+            online: 8
+            online3: 8
+          - title: Lip & Chin
+            price: 20
+            online: 10
+            online3: 10
+          - title: Forehead
+            price: 25
+            online: 15
+            online3: 11
+          - title: Ears
+            price: 15
+            online: 8
+            online3: 8
+          - title: Cheeks
+            price: 22
+            online: 14
+            online3: 11.5
+          - title: Chest & Stomach
+            price: 140
+            online: 84
+            online3: 78.5
+          - title: Chest
+            price: 95
+            online: 57
+            online3: 50.5
+          - title: Stomach
+            price: 95
+            online: 57
+            online3: 50.5
+          - title: 1/2 back
+            price: 129
+            online: 77.4
+            online3: 64
+          - title: Back & Shoulders
+            price: 140
+            online: 84
+            online3: 69.5
+      - title: Lower Body
+        draft: false
+        items:
+          - title: Female Brazilian
+            price: 45
+            online: 22.5
+            online3: 20
+          - title: Female Brazilian + Under Arms
+            price: 50
+            online: 25
+            online3: 22.5
+  
+          - title: Bikini Line
+            price: 20
+            online: 10
+            online3: 10
+          - title: Legs (1/2)
+            price: 110
+            online: 66
+            online3: 55.5
+          - title: Legs (full)
+            price: 140
+            online: 84
+            online3: 79.5
+          - title: Full legs & Brazilian & Underarms
+            price: 149
+            online: 89.4
+            online3: 84.5
+          - title: 1/2 legs & Brazilian & Underarms
+            price: 135
+            online: 81
+            online3: 72.5
+          - title: Feet & Toes
+            price: 35
+            online: 8
+            online3: 8
+  - title: Skin Treatments
+    categories:
+      - title: LED Light Therapy
+        items:
+          - title: Yellow LED light
+            price: 66
+            online: 39
+            online3: 30.5
+          - title: Blue LED light
+            price: 66
+            online: 39
+            online3: 30.5
+      - title: Hydrodermabrasion
+        items:
+          - title: Hydrodermabrasion (Face)
+            price: 85
+            online: 53
+            online3: 45.5
+          - title: hydrodermabrasion (Face+neck)
+            price: 95
+            online: 57
+            online3: 47.5
+   
+    

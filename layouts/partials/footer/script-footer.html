@@ -1,0 +1,25 @@
+{{ partial "footer/esbuild" (dict "src" "js/assets.js" "transpile" true ) }}
+{{ partial "footer/esbuild" (dict "src" "js/vendors.js") }}
+
+{{ if eq .Type "contact" }}
+{{ partial "footer/esbuild" (dict "src" "js/contact.js" "transpile" true ) }}
+{{ end }}
+{{ if eq .Type "gallery-masonry" }}
+{{ partial "footer/esbuild" (dict "src" "js/masonry.js") }}
+{{ end }}
+{{- if eq .Type "templates" -}}
+{{- partial "footer/esbuild" (dict "src" "js/templates.js") -}}
+{{- end -}}
+
+<!-- conditionally load lazysizes on multi page sites -->
+{{/* with .Resources.ByType "image"  }}
+  {{ range . }}
+    {{ if ne .MediaType.SubType "svg" }}
+      {{ partial "scripts/esbuild-async" "js/lazysizes.js" }}
+    {{ end }}
+  {{ end }}
+{{ end */}}
+
+{{ partial "footer/esbuild" (dict "src" "js/lazysizes.js") }}
+
+{{ partial "components/snipcart/3.2.0/footer" . }}

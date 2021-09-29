@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="container-xxl">
+  <div class="row">
+    <div class="col">
+      <h2 class="pb-3">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <div class="h4 text-primary pb-2">{{ . }}</div>
+      {{ end }}
+      <div class="text-body">{{ .Content | markdownify }}</div>
+    </div>
+  </div>
+
+  {{ with .Params.tabItems }}
+  <nav>
+    <div class="mx-sm-3 nav nav-tabs" id="nav-tab" role="tablist">
+      {{ $counterNav := 0 }} 
+      {{ range . }}{{ if not .draft }}
+        <button
+          class="nav-link {{ if eq $counterNav 0 }} active {{ end }}"
+          id="nav-{{ $counterNav }}-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-{{ $counterNav }}"
+          type="button"
+          role="tab"
+          aria-controls="nav-{{ $counterNav }}"
+          aria-selected="true"
+        >
+          {{ .title }}
+        </button>
+      {{ $counterNav = add $counterNav 1 }} 
+      {{ end }} {{ end }}
+    </div>
+  </nav>
+
+  <div class="mx-sm-3 tab-content p-3 border-top-0 border" id="nav-tabContent">
+    {{ $counterContent := 0 }} {{ range . }}{{ if not .draft }}
+    <div
+      class="tab-pane fade {{ if eq $counterContent 0 }} show active{{ end }}"
+      id="nav-{{ $counterContent }}"
+      role="tabpanel"
+      aria-labelledby="nav-{{ $counterContent }}-tab">
+      <p class="p-2">
+        {{ .content }}
+      </p>
+    </div>  
+    {{ $counterContent = add $counterContent 1 }} 
+    {{ end }} {{ end }} 
+   
+  {{ end }}  
+
+
+
+</div>
+{{ end }}

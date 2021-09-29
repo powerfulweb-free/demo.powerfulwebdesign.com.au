@@ -1,0 +1,103 @@
+###############
+# HYAS CONFIG #
+###############
+titleSeparator: "|"
+titleAddition: "Feature Demonstrations" #for home page
+description: ""
+companyName: Powerful Web Design
+
+images: 
+- "logo.jpg" #for social templates
+
+#SITE ALERT TEXT FOR TOP OF PAGE
+alert: false
+alertText: ""
+
+#MENU LOGO
+logoPath: "logo/logo-slim.png"
+# logoWidth: 100 # (100)
+
+#CONFIGURE TOP MENU BUTTON  
+# menu_button_text: "Help Desk"
+# menu_button_link: "https://support.powerfulwebdesign.com.au/"
+# menu_button_style: "btn-warning" # bootstrap button class
+
+
+
+## BROWSER CONFIG
+# apple browser config
+appleFullScreen: true
+appleStatusColor: "white"
+noApplePhoneLinks: true
+safariBgColor: "#5bbad5"
+# ms browSer config
+msTileColor: "#00aba9"
+# general
+themecolor: "#ffffff"
+
+
+#head schema additional config
+schemaType: "Organization"  #organisation/person
+siteLinksSearchBox: false
+schemaSection: "Website"
+
+# OG AND TWITTER SITE PARAMS
+#facebookAppId: # for facebook insights
+twitterSite:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##FACEBOOK EMBED
+## SEE https://developers.facebook.com/docs/plugins/page-plugin/
+##language set through .Site.LanguageCode
+facebookEmbedName: 5 Minute Crafts
+facebookEmbedUrl: https://www.facebook.com/5min.crafts/
+facebookEmbedTabs: "timeline"   # tabs to render -  timeline,events,messages (comma seperated) (timeline)
+facebookEmbedHideCover: false # (false)
+facebookEmbedWidth: "" # #min 180px max 500px (340)
+facebookEmbedHeight: "800" # The pixel height of the plugin. Min. is 70 (500)
+facebookEmbedSmallHeader: false # Use the small header instead (FALSE)
+facebookEmbedAdaptiveWidth: true   Try to fit inside the container width  (TRUE)
+facebookEmbedHideCover: false #hide cover photo in header (FALSE)
+facebookEmbedFriendsFaces: true #Show profile photos when friends like this  (TRUE)
+facebookEmbedHideCTA: false #Hide the custom call to action button (if available) (FALSE)
+facebookEmbedLazy: true # loading="lazy" iframe (TRUE)
+
+
+## override
+twitterAccount: elonmusk
+twitterName: Elon Musk
+##ADD TO SITE.PARAMS 
+##TWITTER EMBEDS 
+##SEE https://publish.twitter.com/#
+
+#twitter-feed partial
+twitterFeed:
+  dark: false # enable dark theme (FALSE)
+  height: "800" #(NULL)
+  width: "" #(NULL)
+#twitter follow button options
+twitterFollow:
+  largeButton: true #large button (FALSE)
+
+
+snipcart:
+  key: ZTYxMTdkMjgtMDk4OC00ZGU1LThhNGQtZWNmMDFjZDU1MDdjNjM3NjA0NDEyODY4MjYyMzE5 #demo
+  #side: true 

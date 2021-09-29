@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="no-js min-vh-100">
+{{ partial "head/head.html" . }}
+<body class="{{ .Scratch.Get "class" }} d-flex flex-column min-vh-100">
+  {{ partial "header/script-header.html" . }}
+
+  <header>
+    {{ if and .IsHome .Site.Params.alert }}
+    {{ partial "header/alert.html" . }}
+    {{ end }}
+    {{ partial "header/header.html" . }}
+  </header>
+  
+
+  {{ partial "header/nav.html" . }}
+ 
+
+  <main class="mb-auto">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    {{ partial "footer/footer.html" . }}
+  </footer>
+  {{ partial "footer/script-footer.html" . }}
+
+  {{ if .Site.IsServer }}
+  {{- partial "dev/parameters.html" . -}}
+  {{ partial "dev/grid.html" . }}
+  {{ end }}
+</body>
+
+</html>

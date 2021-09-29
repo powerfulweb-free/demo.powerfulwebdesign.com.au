@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+
+      <h2 class="page__title ">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <div class="page__subtitle">{{ . | markdownify}}</div>
+      {{ end }}
+      <div class="page__content">{{ .Content }}</div>
+
+ 
+
+  {{ end }}

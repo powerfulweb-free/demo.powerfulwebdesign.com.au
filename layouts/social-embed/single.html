@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+
+
+
+<div class="row d-flex justify-content-center">
+  <div class="col-md-4">
+    <h3>Facebook Feed Embed</h3>
+    {{ partial "embed/c-facebook.html" . }}
+  </div>
+  <div class="col-md-4">
+    <h3>Twitter Feed Embed</h3>
+    <a class="twitter-timeline" 
+    data-lang="{{ substr .Site.LanguageCode 0 2 }}" 
+    {{ with .Site.Params.twitterFeed.height }}
+    data-height="{{ . }}" {{ end }}
+    {{ with .Site.Params.twitterFeed.width }}
+    data-width="{{ . }}"  {{ end }}
+    {{ with .Site.Params.twitterFeed.dark }}
+    data-theme="dark" {{ end }}
+    href="https://twitter.com/{{- .Site.Params.twitterAccount -}}?ref_src=twsrc%5Etfw">Tweets by {{- .Site.Params.twitterFeed.name -}}</a> 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+  <div class="col-md-4">
+    <h3>Twitter Follow Button</h3>
+    <a href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @elonmusk</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- <a href="https://twitter.com/{{- .Site.Social.twitter -}}?ref_src=twsrc%5Etfw" 
+    class="twitter-follow-button" 
+    {{ with .Site.Params.twitterFollow.largeButton }}
+    data-size="large" {{ end }}
+    data-show-screen-name="false" 
+    data-lang="{{ substr .Site.LanguageCode 0 2 }}" 
+    data-show-count="false">Follow @{{- .Site.Params.twitterName -}}</a> -->
+    <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+  </div>
+</div>
+
+
+
+
+{{ end }}

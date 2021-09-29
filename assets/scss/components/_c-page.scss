@@ -1,0 +1,99 @@
+// .section {
+//   @extend .pb-3; //adds 1rem padding to top and bottom of each section
+//   &__title {
+//     // @extend .d-block, .bg-dark;
+//     // @extend .text-end, .text-white;
+//     // @extend .px-3, .pt-2, .pb-3;
+
+//     // padding-bottom: 1rem;
+//     display: none;
+//   }
+
+//   &__subtitle {
+//     @extend .h4;
+//     @extend .pb-3;
+//   }
+
+//   &__content {
+//     //@extend .text-center;
+//   }
+// }
+
+.header {
+  @extend .bg-white;
+  @extend .d-md-none, .d-lg-block;
+
+  &__title {
+    @extend .text-primary;
+
+    padding-left: 1rem;
+  }
+  &__subtitle {
+    @extend .h5;
+
+    margin-bottom: 0;
+    padding-left: 1rem;
+  }
+
+}
+
+.page {
+  main {
+    @extend .pb-3; //adds 1rem padding to the bottom of each page
+    &__title {
+      // @extend .d-block, .bg-dark;
+      // @extend .text-end, .text-white;
+      // @extend .px-3, .pt-2, .pb-3;
+
+      // padding-bottom: 1rem;
+      display: none;
+    }
+
+    &__subtitle {
+      @extend .h4;
+      @extend .pb-3;
+    }
+
+    &__content {
+      //@extend .text-center;
+      min-height: 70vh;
+    }
+
+    // &__header {
+    //   @extend .d-block, .bg-dark;
+    //   @extend .text-end, .text-white;
+    //   @extend .px-3, .pt-2, .pb-3, .mb-3;
+    // }
+  
+  // &--contact {
+  //   @extend .bg-light;
+  // }
+  }
+}
+
+
+// @include media-breakpoint-up(lg) {
+//   //LG and up (menu expanded)
+
+//   body main section:first-of-type  {
+//     padding-top: 6rem !important;
+//   }
+// }
+
+// @include media-breakpoint-down(lg) {
+//   //below LG (menu collapsed)
+//   body main section:first-of-type {
+//     padding-top: 5rem !important; //Top of page margin (inside first section's container), does not affect background colours (bumps below sticky header)
+//   }
+// }
+
+// main {
+//   body main section:not(:first-of-type) {
+//     padding-top: 5rem !important; // padding for subsequent containers to bump below sticky header when using anchor tags, does not affect background colours
+//   }
+// }
+
+h5 {
+  color: #999;
+  //color: #484848;
+}

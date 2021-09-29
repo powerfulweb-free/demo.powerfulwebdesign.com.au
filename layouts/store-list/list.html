@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+  
+<section class="section section--main">
+  <div class="container">
+    <!-- <div style="padding-top: 5rem;"></div> -->
+    <div class="row">
+      <!-- <div class="col-sm-6">
+        {{ partial "components/c-breadcrumbs-home" . }}
+      </div> -->
+      <div class="col d-flex justify-content-end">
+        <div class="">
+          <a href="#" class="position-relative snipcart-checkout">
+            <div class="o-svg o-svg--primary o-svg--lg p-0 m-0">
+              <div class="mx-3 my-3">
+             {{ partial "svg-font" (dict "svg" "icons/bootstrap/cart-fill") }}
+            </div>
+             <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary px-2 text-white snipcart-items-count">0<span class="visually-hidden">Cart Contents</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h3>{{ .Title }}</h3>
+  
+     
+    <div class="row row-cols-md-4 pb-3">
+      {{ $paginator := .Paginate (.Data.Pages) -}}
+      {{ template "_internal/pagination.html" . -}}
+      {{ range .Pages -}}
+      <div class="col pb-3">
+        <div class="card">
+          {{ $ctx := . }}
+          {{ $img := .Params.image }}
+          {{ range first 1 $img }}
+          {{ partial "image" (dict "page" $ctx "src" .name )}}
+          {{ end }}
+          <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            <p class="card-text"> {{ .Description }}</p>
+            <a href="{{ .RelPermalink }}" class="btn btn-outline-secondary">More Details</a>
+          </div>
+        </div>
+      </div>
+      {{ end -}}
+    </div>
+
+  </div>
+</div>
+{{ end }}

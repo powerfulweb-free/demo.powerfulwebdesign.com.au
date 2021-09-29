@@ -1,0 +1,27 @@
+<!-- back to top icon -->
+{{/* partial "components/c-back-to-top" . */}}
+<!-- non mobile footer -->
+<div class="container-fluid d-none d-sm-block" id="footer">
+  <div class="row bg-dark text-light p-3">
+    <div class="col small">
+      {{ .Site.Params.companyName }} &nbsp;&copy;&nbsp;<span id="year">&nbsp;</span></div>
+  </div>
+</div>
+<!-- mobile footer -->
+{{/*  <div class="container-fluid d-block d-sm-none fixed-bottom" id="footer-mobile">
+  <a href="{{- .Site.Params.phoneURL -}}" class="no-link-decoration">
+    <div class="row bg-success ">
+      <div class="col text-white h2 d-flex justify-content-center  my-2">
+        <div class=" mx-2">
+          <div class="o-svg o-svg--bg">
+            {{ partial "scripts/svg-inline.html" .Site.Params.footerPhoneIcon }} 
+          </div>   
+        </div>
+        <div class="u-link-no-decoration">{{- .Site.Params.phoneText -}}</div>
+      </div>
+    </div>
+  </a>
+</div> */}}
+<script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>

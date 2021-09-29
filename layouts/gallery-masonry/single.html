@@ -1,0 +1,112 @@
+{{ define "main" }}
+<style> /*
+  .img-carousel {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 85vh !important;
+    width: auto !important;
+  } */  
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-image: none;
+  }
+
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2 class="pb-3">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <div class="h4 text-primary pb-2">{{ . }}</div>
+      {{ end }}
+      <div class="text-body">{{ .Content | markdownify }}</div>
+    </div>
+  </div>
+
+  <div
+    class="row"
+    id="js-masonryGrid"
+    data-bs-toggle="modal"
+    data-bs-target="#js-imageModal"
+   
+  >
+  {{- /*  from parent div data-masonry='{"percentPosition": "true"}'  */ -}}
+    {{ range $index, $element := .Resources.ByType "image" }}
+    <div class="col-6 col-md-4 col-xl-3 pb-3 px-2 js-masonry-item">
+      {{ partial "image" (dict "page" $ "src" $element "title" $.Title
+       "class" "" "data" (printf
+      "data-bs-target='#js-imageCarousel' data-bs-slide-to='%v'" $index)
+      "sizes" "(min-width:1200px, 25vw), (min-width:768px, 33.33vw), 50vw" "maxWidth" 1150
+      "widths" (slice 380 570 760 900)  ) }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="js-imageModal"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+  aria-labelledby="modalLabel"
+>
+  <div
+    class="modal-dialog modal-fullscreen"
+    role="document"
+    id="js-imageModalDialog"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Image Viewer</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div
+          id="js-imageCarousel"
+          class="carousel slide carousel-fade carousel-dark h-100"
+          data-bs-ride="carousel"
+          data-bs-interval="false"
+        >
+          <div class="carousel-inner h-100">
+            {{ range $index, $element := .Resources.ByType "image" }}
+            <div class="carousel-item{{ if eq $index 1 }} active{{ end }} h-100 text-center">
+              {{ partial "image.html" (dict "page" $ "src" $element "title"
+              $.Title "class" "img-carousel"
+              "widths" (slice 576 992 1400 2000)
+              "style" "max-height:100%!important;width:auto!important;" )}}
+            </div>
+            {{ end }}
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#js-imageCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#js-imageCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

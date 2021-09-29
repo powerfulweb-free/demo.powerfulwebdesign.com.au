@@ -1,0 +1,71 @@
+#Header menu
+
+# only for parents
+#main:
+  # - identifier: content
+  #   name: Content Organisation
+  #   weight: 20
+
+  # - identifier: modules
+  #   name: Modules
+  #   weight: 40
+  # - identifier: social
+  #   name: Social Media
+  #   weight: 20
+  #   parent: modules
+  # - identifier: store
+  #   name: Online store
+  #   weight: 10
+  #   parent: modules
+
+  # - identifier: templates
+  #   name: Website Templates
+  #   weight: 40
+  # - name: Bocor
+  #   parent: templates
+  #   url: /templates/bocor
+  # - name: Bootslander
+  #   parent: templates
+  #   url: /templates/bootslander
+  # - name: BizLand
+  #   parent: templates
+  #   url: /templates/bizland
+  # - name: Flexor
+  #   parent: templates
+  #   url: /templates/flexor
+  # - name: Medilab
+  #   parent: templates
+  #   url: /templates/medilab
+  # - name: Mentor
+  #   parent: templates
+  #   url: /templates/mentor
+  # - name: Creative
+  #   parent: templates
+  #   url: /templates/creative
+  # - name: Agency
+  #   parent: templates
+  #   url: /templates/agency
+  # - name: GP
+  #   parent: templates
+  #   url: /templates/gp
+  # - name: Company
+  #   parent: templates
+  #   url: /templates/company
+  # - name: Day
+  #   parent: templates
+  #   url: /templates/day
+  # - name: Siimple
+  #   parent: templates
+  #   url: /templates/siimple
+  # - name: Imperial
+  #   parent: templates
+  #   url: /templates/imperial
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light" id="js-navParent">
+  <div class="container-fluid">
+    <header class="">
+      <a class="navbar-brand" href="{{ "/" | absURL }}">
+        {{ with .Site.Params.logoPath }}
+        <img src="{{ . | relURL }}" alt="{{ $.Site.Title }}" {{ with site.Params.logoWidth | default 100 }}width="{{.}}" {{ end }}>
+        {{ else }}{{- .Site.Title -}}{{ end }}
+      </a> <span class="h3"> Content Samples</span>
+    </header>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">&nbsp;</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}  
+          <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }} nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{- .Name -}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              {{ range .Children }}
+              <!-- <div class="dropdown-divider"></div> -->
+              <li>
+                <a class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} dropdown-item" href="{{ .URL | relLangURL }}">{{- .Name -}}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+              <a href="{{ .URL | relLangURL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} nav-link" {{ with .Params.Anchor }}data-bs-target="{{ . }}"{{ end }}>
+                  {{- .Name -}}
+              </a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ with .Site.Params.menu_button_link }}
+      <a role="button" class="btn m-2 {{ with $.Site.Params.menu_button_style }}{{ . }}{{ else }}btn-primary{{ end }}"
+        href="{{.}}">{{ $.Site.Params.menu_button_text }}</a>
+      {{ end }}
+      <!-- Language List -->
+      {{ if .IsTranslated }}
+      <select class="lang-list" id="select-language" onchange="location = this.value;">
+        {{ $siteLanguages := .Site.Languages }}
+        {{ $pageLang := .Page.Lang }}
+        {{ range .Page.AllTranslations }}
+        {{ $translation := .}}
+        {{ range $siteLanguages }}
+        {{ if eq $translation.Lang .Lang }}
+        {{ $selected := false }}
+        {{ if eq $pageLang .Lang}}
+        <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}</option>
+        {{ else }}
+          <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+      </select>
+      {{ end }}
+    </div>
+  </div>
+</nav>
+<h2 class="d-block bg-dark px-3 pt-2 pb-3 mb-3 text-end">
+  <span class="text-white">{{ .Title }}</span>
+</h2>
+
+
+

@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<div class="container-xxl p-3">
+  <div class="row">
+    <div id="js-buttonParent" class="col pb-3">
+      <button class="btn btn-outline-primary" data-filter="*">All</button>
+      <button class="btn btn-outline-primary" data-filter=".single-page">Single Page Layout</button>
+      <button class="btn btn-outline-primary" data-filter=".multi-page">Multi Page Layout</button>
+      <button class="btn btn-outline-primary" data-filter=".blog">Blog Ready</button>
+    </div>
+  </div>
+  <div id="js-isotopeGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 ">
+    {{ range .Params.templates }}
+    <div class="col mb-3 js-isotopeItem {{ with .tags}}{{ delimit . " " }}{{ end }}">
+      <div class="card h-100">
+        {{ $title := (humanize .id) }}
+        {{ $ctx := . }}
+        {{ with $.Resources.GetMatch (printf "images/%s.png" .id) }}
+        {{ partial "image" (dict "page" $ "src" . "title" $title "width" "cols" "class" "card-img-top" "fillRatio"
+        (slice 3 2) )}}
+        {{ end }}
+        <div class="card-body">
+          <h5 class="card-title">{{ $title }}</h5>
+          <p class="card-text">{{ .description }}</p>
+          <a href="{{ printf "/templates/%s/" .id }}" class="btn btn-primary" target="_blank" rel="noopener">View
+            Demo</a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

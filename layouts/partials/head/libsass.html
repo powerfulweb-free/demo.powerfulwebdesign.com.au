@@ -1,0 +1,9 @@
+{{ $css := "" }}
+{{ if eq (hugo.Environment) "development" -}}
+  {{ $options := (dict "transpiler" "libsass" "enableSourceMap" true "includePaths" (slice "node_modules")) -}}
+  {{ $css = resources.Get . | toCSS $options | resources.Fingerprint -}}
+{{ else -}}
+  {{ $options := (dict "transpiler" "libsass" "outputStyle" "compressed" "includePaths" (slice "node_modules")) -}}
+  {{ $css = resources.Get . | toCSS $options | postCSS (dict "config" "config/postcss.config.js") | resources.Fingerprint -}}
+{{ end -}}
+<link rel="stylesheet" href="{{ $css.Permalink | relURL }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">

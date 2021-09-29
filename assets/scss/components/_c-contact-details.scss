@@ -1,0 +1,35 @@
+.c-contact-details {
+
+  &__row {
+    @extend .d-flex, .flex-row,;
+    @extend .card, .bg-white, .mb-3;
+    @extend %u-shadow-hover--blue;
+  
+    &:hover {
+      //box-shadow: 0px 5px 25px rgba(47, 128, 237, 0.3);
+    }
+  }
+  &__svg-wrapper {
+    //empty - stops svg from expanding to match adjacent div
+  }
+
+  &__svg { 
+    @extend .o-btn-svg, .o-btn-svg--primary, .m-3;
+  }
+
+  &__href {
+    // @extend %u-link-no-decoration;
+    // overflow-wrap: break-word;
+    // word-wrap: break-word;
+    word-break: break-all;
+  
+  }
+
+  &__text {
+    @extend .d-flex, .align-items-center;
+    
+    a {
+      text-decoration: none;
+    }
+  }
+}
