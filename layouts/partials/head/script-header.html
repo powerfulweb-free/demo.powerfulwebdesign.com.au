@@ -1,0 +1,15 @@
+{{ partial "esbuild" (dict "src" "js/assets.js" "transpile" true ) }}
+{{ partial "esbuild" (dict "src" "js/vendors.js") }}
+
+{{ if eq .Type "contact" }}
+{{ partial "esbuild" (dict "src" "js/contact.js" "transpile" true ) }}
+{{ end }}
+{{ if or (eq .Type "gallery-square") (eq .Type "gallery-masonry")}}
+{{ partial "esbuild" (dict "src" "js/masonry.js") }}
+{{ end }}
+{{- if eq .Type "templates" -}}
+{{- partial "esbuild" (dict "src" "js/templates.js") -}}
+{{- end -}}
+
+{{/* partial "esbuild" (dict "src" "js/lazysizes.js") */}}
+

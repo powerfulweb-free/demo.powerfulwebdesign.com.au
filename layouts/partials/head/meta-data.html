@@ -1,0 +1,56 @@
+{{/*   
+SITE PARAMS
+.Site.Params.description = "" #Site wide description fallback
+
+SITE CONFIG - ALTERNATE LANGUAGES
+defaultContentLanguage: en
+languages:
+  es:
+    title: titulo
+    weight: 2
+    languageCode: es-ES
+  en:
+    title: My blog
+    weight: 1
+    languageCode: en-AU
+
+PAGE PARAMS
+.Description = "" # page specific description in md
+.Scratch.Get "paginator"
+*/}}
+
+<meta charset="utf-8">
+<!-- Viewport for responsive web design BS5 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Document Title -->
+<!-- Meta Description -->
+{{ with .Description -}}
+<meta name="description" content="{{ . }}">
+{{ else -}}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ end -}}
+{{ partial "head/browser-config.html" . }}
+<!-- Helps prevent duplicate content issues -->
+{{ if $.Scratch.Get "paginator" }}
+<link rel="canonical" href="{{ .Paginator.URL | absURL }}">
+{{ if .Paginator.HasPrev -}}
+<link rel="prev" href="{{ .Paginator.Prev.URL | absURL }}">
+{{ end -}}
+{{ if .Paginator.HasNext -}}
+<link rel="next" href="{{ .Paginator.Next.URL | absURL }}">
+{{ end -}}
+{{ else -}}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ end -}}
+<!-- not used -->
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+<!-- alternate language support -->
+{{ if .IsTranslated }}
+	{{ range .AllTranslations }}
+	  <link rel="alternate" hreflang="{{ .Site.LanguageCode }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+	{{ end }}
+{{ end }}
+
+

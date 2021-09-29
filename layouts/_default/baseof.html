@@ -3,8 +3,6 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}" class="no-js min-vh-100">
 {{ partial "head/head.html" . }}
 <body class="{{ .Scratch.Get "class" }} d-flex flex-column min-vh-100">
-  {{ partial "header/script-header.html" . }}
-
   <header>
     {{ if and .IsHome .Site.Params.alert }}
     {{ partial "header/alert.html" . }}
