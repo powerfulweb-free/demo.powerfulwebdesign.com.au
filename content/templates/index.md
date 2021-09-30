@@ -5,25 +5,49 @@ weight: 50
 type: templates
 templates:
   - id: bizland
+    tags: [single, multi, product]
+     # bootstrap made
   - id: bocor
+    tags: [single, multi, product]
+     # bootstrap made
   - id: bootslander
+    tags: [single, product]
+     # bootstrap made
   - id: flexor
+    tags: [single, multi, blog, product]
+     # bootstrap made
   - id: medilab
+    tags: [single, multi]
+     # bootstrap made
   - id: mentor
+    tags: [single, multi, product]
+     # bootstrap made
   - id: company
+    tags: [single, multi, product]
+     # bootstrap made
   - id: gp
+    tags: [single, multi, product]
+     # bootstrap made
   - id: imperial
-    tags: 
-    - single-page
+    tags: [single, multi, product]
+     # bootstrap made
   - id: siimple
-    tags: [single-page]
+    tags: [single]
+     # bootstrap made
   - id: day
-    tags: [single-page]
+    tags: [single, multi, product]
+     # bootstrap made
   - id: agency
-    tags: [single-page]
+    tags: [single]
+    # start bootstrap
   - id: creative
-    tags: [single-page]
-  # - id: resume
+    tags: [single]
+    # start bootstrap
+  - id: resume
+    tags: [single]
+    categories: [resume]
+    # start bootstrap
   - id: flexstart
-    tags: [blog, multi-page, single-page]
+    tags: [blog, multi, single, product]
+    # bootstrap made
 ---

@@ -2,11 +2,11 @@
 
 <div class="container-xxl p-3">
   <div class="row">
-    <div id="js-buttonParent" class="col pb-3">
-      <button class="btn btn-outline-primary" data-filter="*">All</button>
-      <button class="btn btn-outline-primary" data-filter=".single-page">Single Page Layout</button>
-      <button class="btn btn-outline-primary" data-filter=".multi-page">Multi Page Layout</button>
-      <button class="btn btn-outline-primary" data-filter=".blog">Blog Ready</button>
+    <div id="js-buttonParent" class="col pb-3 text-center">
+      <button aria-pressed="true" data-filter="*"        class="btn btn-outline-primary active">All</button>
+      <button aria-pressed="false" data-filter=".single" class="btn btn-outline-primary">Single Page Layout</button>
+      <button aria-pressed="false" data-filter=".multi"  class="btn btn-outline-primary">Multi Page Layout</button>
+      <button aria-pressed="false" data-filter=".blog"   class="btn btn-outline-primary">Blog Ready</button>
     </div>
   </div>
   <div id="js-isotopeGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 ">
@@ -16,8 +16,13 @@
         {{ $title := (humanize .id) }}
         {{ $ctx := . }}
         {{ with $.Resources.GetMatch (printf "images/%s.png" .id) }}
-        {{ partial "image" (dict "page" $ "src" . "title" $title "width" "cols" "class" "card-img-top" "fillRatio"
-        (slice 3 2) )}}
+        {{ partial "image" (dict "page" $ "src" . "title" $title 
+        "class" "card-img-top" "layout" "responsive" 
+        "fillRatio" (slice 3 2)
+        "test" "hello"
+        "widths" (slice 220 350 440 700 500)
+        "sizes" "(min-width:992px)25vw,(min-width:576px)33.3vw,50vw"
+         )}}
         {{ end }}
         <div class="card-body">
           <h5 class="card-title">{{ $title }}</h5>
