@@ -40,13 +40,12 @@
     "hugo": "0.88.1"
   },
   "scripts": {
-    "git-init": "shx rm -rf .git && git init",
     "dev": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender --gc",
-    "dev:preview": "npm run dev --buildDrafts --buildFuture",
+    "dev:preview": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender --gc --buildDrafts --buildFuture",
     "build": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo --gc --minify",
-    "build:preview": "npm run build --buildDrafts --buildFuture",
     "start": "shx rm -rf public && hugo server --disableFastRender --renderToDisk",
-    "starth:preview": "npm run start --buildDrafts --buildFuture",
+    "start:preview": "shx rm -rf public && hugo server --disableFastRender --renderToDisk --buildDrafts --buildFuture",
+    "start:production": "shx rm -rf public && exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender --gc --minify --environment production",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
     "lint:scripts": "eslint assets/js config functions",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",

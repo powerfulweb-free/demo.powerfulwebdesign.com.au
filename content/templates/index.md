@@ -3,6 +3,7 @@ title: Website Starter Templates
 menu: main
 weight: 50
 type: templates
+draft: true
 templates:
   - id: bizland
     tags: [single, multi, product]
