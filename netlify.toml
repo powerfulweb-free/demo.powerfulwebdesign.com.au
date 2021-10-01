@@ -13,6 +13,7 @@ NPM_FLAGS = "--production"
 [context.split1]
 command = "hugo --gc --minify --enableGitInfo"
 
+
 [context.split1.environment]
 HUGO_ENV = "production"
 NPM_FLAGS = "--production"
