@@ -1,0 +1,176 @@
+// sizes for o-btn-svg
+$svg-btn-padding-sm: .33rem !default; // size / 3
+$svg-btn-icon-size-sm: 1rem !default;  
+$svg-btn-border-sm: 2px !default;
+
+$svg-btn-padding: .5rem !default;    // size / 3
+$svg-btn-icon-size: 1.5rem !default;  
+$svg-btn-border: 2.5px !default;
+
+$svg-btn-padding-lg: .66rem !default; // size / 3
+$svg-btn-icon-size-lg: 2rem !default;  
+$svg-btn-border-lg: 3px !default;
+
+// for back to top button
+$svg-btn-padding-up: 0 !default; // size / 3
+$svg-btn-icon-size-up: 3rem !default; 
+$svg-btn-border-up: 3px !default;
+
+
+//add square (radius option too)
+
+//mixins
+@mixin svg-button-size($padding, $size, $border) {
+  border-width: $border;
+  padding: $padding;
+
+  svg {
+    height: $size;
+    width: $size;   
+  }
+}
+
+@mixin svg-button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background: if($color == $color-contrast-light, shade-color($background, 15%), tint-color($background, 15%)),
+  //$hover-border: if($color == $color-contrast-light, shade-color($border, 20%), tint-color($border, 10%)),
+  $hover-color: color-contrast($hover-background),
+  //$active-background: if($color == $color-contrast-light, shade-color($background, 20%), tint-color($background, 20%)),
+  //$active-border: if($color == $color-contrast-light, shade-color($border, 25%), tint-color($border, 10%)),
+  //$active-color: color-contrast($active-background),
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+) {
+  @include box-shadow($btn-box-shadow);
+
+  background: $background;
+  border-color: $background;
+  color: $color;
+  // @include gradient-bg($background);
+  //border-color: $border;
+
+  &:hover {
+    //@include gradient-bg($hover-background);
+    background: $hover-background;
+    //border-color: $hover-border;
+    border-color: $hover-background;
+    color: $hover-color;
+  }
+
+  &:disabled {
+    background-color: $disabled-background;
+    // Remove CSS gradients if they're enabled
+    background-image: if($enable-gradients, none, null);
+    border-color: $disabled-border;
+    color: $disabled-color;
+  }
+}
+
+@mixin svg-button-outline-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) {
+  border-color: $color;
+  color: $color;
+  background: $body-bg;
+  svg {
+    fill: $color;
+  }
+ 
+  &:hover {
+    background-color: $active-background;
+    border-color: $active-border;
+    color: $body-bg;
+    svg {
+      fill: $body-bg;
+    }
+
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: transparent;
+    color: $color;
+  }
+}
+
+
+
+
+.o-btn-svg {
+  @extend .d-inline-flex;
+  @include transition($btn-transition);
+  //display: inline-block;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: $svg-btn-border;
+
+  //color: inherit; //color is inherited unless set with o-svg--$color
+  color: $body-bg;
+
+  padding: $svg-btn-padding;
+
+  user-select: none;
+  vertical-align: middle;
+
+  &:hover {
+    //color: $body-color; //styled in variants
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    @include box-shadow(none);
+    opacity: $btn-disabled-opacity;
+    pointer-events: none;
+  }
+
+  SVG {
+    @extend .d-inline-flex;
+    background: transparent;
+    //fill: currentColor;
+    fill: $body-bg;
+    //margin: $btn-padding-y $btn-padding-x;
+    height: $svg-btn-icon-size;  //DEFAULT ONLY
+    width: $svg-btn-icon-size;   //DEFAULT ONLY
+  }
+
+  &--sm {
+    @include svg-button-size($svg-btn-padding-sm, $svg-btn-icon-size-sm, $svg-btn-border-sm);
+  }
+  //md is default size
+  &--lg {
+    @include svg-button-size($svg-btn-padding-lg, $svg-btn-icon-size-lg, $svg-btn-border-lg);
+  }
+  
+  &--up {
+    @include svg-button-size($svg-btn-padding-up, $svg-btn-icon-size-up, $svg-btn-border-up);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .o-btn-svg--#{$color} {
+    @include svg-button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .o-btn-svg--outline-#{$color} {
+    @include svg-button-outline-variant($value);
+  }
+}
+
+
+
+
+
+

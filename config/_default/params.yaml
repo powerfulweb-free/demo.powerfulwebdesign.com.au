@@ -45,7 +45,11 @@ schemaSection: "Website"
 #facebookAppId: # for facebook insights
 twitterSite:
 
-
+snipcart:
+  enabled: true # defaults to true
+  key: ZTYxMTdkMjgtMDk4OC00ZGU1LThhNGQtZWNmMDFjZDU1MDdjNjM3NjA0NDEyODY4MjYyMzE5 #demo 
+  side: false # or false for full screen cart
+  bootstrap: true # enables snipcart z-index css for bootstrap compatibility 
 
 
 
@@ -98,6 +102,3 @@ twitterFollow:
   largeButton: true #large button (FALSE)
 
 
-snipcart:
-  key: ZTYxMTdkMjgtMDk4OC00ZGU1LThhNGQtZWNmMDFjZDU1MDdjNjM3NjA0NDEyODY4MjYyMzE5 #demo
-  #side: true 

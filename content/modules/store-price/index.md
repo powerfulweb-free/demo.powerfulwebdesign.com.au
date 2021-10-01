@@ -5,7 +5,7 @@ date:
 lastmod:
 draft: false
 robots: nofollow
-type: prices
+type: store-price
 menu:
   main:
     parent: modules

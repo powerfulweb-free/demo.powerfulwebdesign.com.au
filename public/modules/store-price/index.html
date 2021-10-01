@@ -1,0 +1,647 @@
+<!doctype html><html lang=en-au class="no-js min-vh-100">
+<head>
+<title>Price List Purchasing | Powerful Web Design</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content>
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="white">
+<meta name=format-detection content="telephone=no">
+<meta name=msapplication-config content="browserconfig.xml">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#00aba9">
+<meta name=msapplication-TileImage content="/mstile-150x150.png">
+<meta name=theme-color content="#ffffff">
+<link rel=canonical href=https://demo.powerfulwebdesign.com.au/modules/store-price/>
+<link rel=stylesheet href=/scss/index.7f9b0fccbe10921ea6e4c83a179b8cd1249c09647521db01228f02fb78bad79e.css integrity="sha256-f5sPzL4Qkh6m5Mg6F5uM0SScCWR1IdsBIo8C+3i6154=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css>
+<style>.snipcart-modal__container{z-index:1060}</style>
+<meta property="og:title" content="Price List Purchasing">
+<meta property="og:description" content="Price list page. Displays prices from database.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://demo.powerfulwebdesign.com.au/modules/store-price/"><meta property="og:image" content="https://demo.powerfulwebdesign.com.au/logo.jpg"><meta property="article:section" content="modules">
+<meta property="og:locale" content="en-AU">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://demo.powerfulwebdesign.com.au/logo.jpg">
+<meta name=twitter:title content="Price List Purchasing">
+<meta name=twitter:description content="Price list page. Displays prices from database.">
+<meta name=twitter:url content="https://demo.powerfulwebdesign.com.au/modules/store-price/">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/demo.powerfulwebdesign.com.au"},{"@type":"ListItem","position":3,"name":"Modules","item":"https:\/\/demo.powerfulwebdesign.com.au\/modules\/"},{"@type":"ListItem","position":4,"name":"Store Price","item":"https:\/\/demo.powerfulwebdesign.com.au\/modules\/store-price\/"}]}</script>
+<meta name=robots content="nofollow">
+<script defer type=text/javascript src=/js/assets.269f813cc5b13068e7cb13628db1f98a40d016353295d71480c1be110b43632f3e815abc049fd6069957716735dc87757748d9859ce05b66c2360880416c6ecc.js integrity="sha512-Jp+BPMWxMGjnyxNijbH5ikDQFjUyldcUgMG+EQtDYy8+gVq8BJ/WBplXcWc13Id1d0jZhZzgW2bCNgiAQWxuzA=="></script>
+<script defer type=text/javascript src=/js/vendors.ab61da0cf3b8f7bfad4774cbee05010da6b064e15a018ce74b8f72c1168e2cff523e01c757c16fde72c27529b43b6fe49692b2293319c570b3e7349c62978679.js integrity="sha512-q2HaDPO497+tR3TL7gUBDaawZOFaAYznS49ywRaOLP9SPgHHV8Fv3nLCdSm0O2/klpKyKTMZxXCz5zScYpeGeQ=="></script>
+<script defer src=https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js></script>
+<div hidden id=snipcart data-api-key=ZTYxMTdkMjgtMDk4OC00ZGU1LThhNGQtZWNmMDFjZDU1MDdjNjM3NjA0NDEyODY4MjYyMzE5></div>
+<link rel=preconnect href=https://app.snipcart.com>
+<link rel=preconnect href=https://cdn.snipcart.com>
+</head>
+<body class="page page--single page--store-price d-flex flex-column min-vh-100">
+<header>
+</header>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light" id=js-navParent>
+<div class=container-fluid>
+<header>
+<a class=navbar-brand href=https://demo.powerfulwebdesign.com.au/>
+<img src=/logo/logo-slim.png alt="Powerful Web Design" width=100>
+</a> <span class=h3> Content Samples</span>
+</header>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon>&nbsp;</span>
+</button>
+<div class="collapse navbar-collapse" id=navbarSupportedContent>
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class=nav-item>
+<a href=/ class=nav-link>Home</a>
+</li>
+<li class="active nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>Modules</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby=navbarDropdown>
+<li>
+<a class=dropdown-item href=/modules/store-list/>Online Store</a>
+</li>
+<li>
+<a class="active dropdown-item" href=/modules/store-price/>Price List Purchasing</a>
+</li>
+<li>
+<a class=dropdown-item href=/modules/social-buttons/>Social Media Buttons</a>
+</li>
+<li>
+<a class=dropdown-item href=/modules/social-embed/>Social Media Integration</a>
+</li>
+<li>
+<a class=dropdown-item href=/modules/map/>Google Map Embed</a>
+</li>
+<li>
+<a class=dropdown-item href=/modules/contact/>Contact Form</a>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-expanded=false>Content Organisation</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby=navbarDropdown>
+<li>
+<a class=dropdown-item href=/content/gallery-masonry/>Masonry Image Gallery</a>
+</li>
+<li>
+<a class=dropdown-item href=/content/gallery-square/>Square Image Gallery</a>
+</li>
+<li>
+<a class=dropdown-item href=/content/cards/>Cards</a>
+</li>
+<li>
+<a class=dropdown-item href=/content/accordion/>Accordion</a>
+</li>
+<li>
+<a class=dropdown-item href=/content/tabs/>Tabs</a>
+</li>
+</ul>
+</li>
+<li class=nav-item>
+<a href=/templates/ class=nav-link>Website Starter Templates</a>
+</li>
+</ul>
+<div>
+<a href=# class="position-relative snipcart-checkout">
+<div class="o-svg o-svg--primary o-svg--lg p-0 m-0">
+<div class="mx-3 my-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolor" class="bi bi-cart-fill" viewBox="0 0 16 16" style="height:2em;width:2em;font-size:inherit;color:inherit;fill:currentColor;vertical-align:middle"><path d="M0 1.5A.5.5.0 01.5 1H2a.5.5.0 01.485.379L2.89 3H14.5a.5.5.0 01.491.592l-1.5 8A.5.5.0 0113 12H4a.5.5.0 01-.491-.408L2.01 3.607 1.61 2H.5A.5.5.0 010 1.5zM5 12a2 2 0 100 4 2 2 0 000-4zm7 0a2 2 0 100 4 2 2 0 000-4zm-7 1a1 1 0 110 2 1 1 0 010-2zm7 0a1 1 0 110 2 1 1 0 010-2z"/></svg>
+</div>
+<div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary px-2 text-white snipcart-items-count">0<span class=visually-hidden>Cart Contents</span></div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<h2 class="d-block bg-dark px-3 pt-2 pb-3 mb-3 text-end">
+<span class=text-white>Price List Purchasing</span>
+</h2>
+<main class=mb-auto>
+<div class=container>
+<div class=row>
+<div class=col>
+<h2 class=pb-3>Price List Purchasing</h2>
+</div>
+</div>
+<nav>
+<div class="mx-sm-3 nav nav-tabs" id=nav-tab role=tablist>
+<button class="nav-link active" id=nav-0-tab data-bs-toggle=tab data-bs-target=#nav-0 type=button role=tab aria-controls=nav-0 aria-selected=true>
+Laser Hair Removal
+</button>
+<button class=nav-link id=nav-1-tab data-bs-toggle=tab data-bs-target=#nav-1 type=button role=tab aria-controls=nav-1 aria-selected=true>
+Skin Treatments
+</button>
+</div>
+</nav>
+<div class="mx-sm-3 tab-content pb-3" id=nav-tabContent>
+<div class="tab-pane fade show active border-start border-end border-bottom" id=nav-0 role=tabpanel aria-labelledby=nav-0-tab>
+<div class="accordion accordion-flush" id=accordion-0>
+<div class=accordion-item>
+<h2 class=accordion-header id=heading-0>
+<button class=accordion-button type=button data-bs-toggle=collapse data-bs-target=#collapse-0 aria-expanded=true aria-controls=collapse-0>
+Upper Body
+</button>
+</h2>
+<div id=collapse-0 class="accordion-collapse collapse show" aria-labelledby=heading-0 data-bs-parent=#accordion-0>
+<div class="accordion-body p-0">
+<table class="table table-hover table-responsive-sm">
+<thead>
+<tr>
+<th scope=col width="30%  ">Item</th>
+<th scope=col width="15%  ">Was</th>
+<th scope=col width="15%  ">Price</th>
+<th scope=col width="15%  ">Buy 3</th>
+<th scope=col width="25%  ">Buy Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Face</td>
+<td>$50.00</td>
+<td class=text-danger>
+$30.00
+</td>
+<td class=text-danger>
+$27.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Full Face" data-item-price=30 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Full Face" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+51] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Side of Face</td>
+<td>$33.00</td>
+<td class=text-danger>
+$20.00
+</td>
+<td class=text-danger>
+$17.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Side of Face" data-item-price=20 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Side of Face" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+31] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Face & Neck</td>
+<td>$59.00</td>
+<td class=text-danger>
+$35.40
+</td>
+<td class=text-danger>
+$30.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Face & Neck" data-item-price=35.4 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Face & Neck" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+54.6] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Lip</td>
+<td>$15.00</td>
+<td class=text-danger>
+$8.00
+</td>
+<td class=text-danger>
+$8.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Lip data-item-price=8 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Lip" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+16] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Chin</td>
+<td>$15.00</td>
+<td class=text-danger>
+$8.00
+</td>
+<td class=text-danger>
+$8.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Chin data-item-price=8 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Chin" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+16] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Lip & Chin</td>
+<td>$20.00</td>
+<td class=text-danger>
+$10.00
+</td>
+<td class=text-danger>
+$10.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Lip & Chin" data-item-price=10 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Lip & Chin" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+20] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Forehead</td>
+<td>$25.00</td>
+<td class=text-danger>
+$15.00
+</td>
+<td class=text-danger>
+$11.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Forehead data-item-price=15 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Forehead" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+18] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Ears</td>
+<td>$15.00</td>
+<td class=text-danger>
+$8.00
+</td>
+<td class=text-danger>
+$8.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Ears data-item-price=8 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Ears" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+16] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Cheeks</td>
+<td>$22.00</td>
+<td class=text-danger>
+$14.00
+</td>
+<td class=text-danger>
+$11.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Cheeks data-item-price=14 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Cheeks" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+20.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Chest & Stomach</td>
+<td>$140.00</td>
+<td class=text-danger>
+$84.00
+</td>
+<td class=text-danger>
+$78.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Chest & Stomach" data-item-price=84 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Chest & Stomach" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+151.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Chest</td>
+<td>$95.00</td>
+<td class=text-danger>
+$57.00
+</td>
+<td class=text-danger>
+$50.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Chest data-item-price=57 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Chest" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+94.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Stomach</td>
+<td>$95.00</td>
+<td class=text-danger>
+$57.00
+</td>
+<td class=text-danger>
+$50.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id=Stomach data-item-price=57 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Stomach" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+94.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>1/2 back</td>
+<td>$129.00</td>
+<td class=text-danger>
+$77.40
+</td>
+<td class=text-danger>
+$64.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="1/2 back" data-item-price=77.4 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - 1/2 back" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+114.6] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Back & Shoulders</td>
+<td>$140.00</td>
+<td class=text-danger>
+$84.00
+</td>
+<td class=text-danger>
+$69.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Back & Shoulders" data-item-price=84 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Upper Body - Back & Shoulders" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+124.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h2 class=accordion-header id=heading-1>
+<button class="accordion-button collapsed" type=button data-bs-toggle=collapse data-bs-target=#collapse-1 aria-expanded=true aria-controls=collapse-1>
+Lower Body
+</button>
+</h2>
+<div id=collapse-1 class="accordion-collapse collapse" aria-labelledby=heading-1 data-bs-parent=#accordion-0>
+<div class="accordion-body p-0">
+<table class="table table-hover table-responsive-sm">
+<thead>
+<tr>
+<th scope=col width="30%  ">Item</th>
+<th scope=col width="15%  ">Was</th>
+<th scope=col width="15%  ">Price</th>
+<th scope=col width="15%  ">Buy 3</th>
+<th scope=col width="25%  ">Buy Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Female Brazilian</td>
+<td>$45.00</td>
+<td class=text-danger>
+$22.50
+</td>
+<td class=text-danger>
+$20.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Female Brazilian" data-item-price=22.5 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Female Brazilian" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+37.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Female Brazilian + Under Arms</td>
+<td>$50.00</td>
+<td class=text-danger>
+$25.00
+</td>
+<td class=text-danger>
+$22.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Female Brazilian + Under Arms" data-item-price=25 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Female Brazilian + Under Arms" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+42.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Bikini Line</td>
+<td>$20.00</td>
+<td class=text-danger>
+$10.00
+</td>
+<td class=text-danger>
+$10.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Bikini Line" data-item-price=10 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Bikini Line" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+20] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Legs (1/2)</td>
+<td>$110.00</td>
+<td class=text-danger>
+$66.00
+</td>
+<td class=text-danger>
+$55.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Legs (1/2)" data-item-price=66 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Legs (1/2)" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+100.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Legs (full)</td>
+<td>$140.00</td>
+<td class=text-danger>
+$84.00
+</td>
+<td class=text-danger>
+$79.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Legs (full)" data-item-price=84 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Legs (full)" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+154.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Full legs & Brazilian & Underarms</td>
+<td>$149.00</td>
+<td class=text-danger>
+$89.40
+</td>
+<td class=text-danger>
+$84.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Full legs & Brazilian & Underarms" data-item-price=89.4 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Full legs & Brazilian & Underarms" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+164.1] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>1/2 legs & Brazilian & Underarms</td>
+<td>$135.00</td>
+<td class=text-danger>
+$81.00
+</td>
+<td class=text-danger>
+$72.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="1/2 legs & Brazilian & Underarms" data-item-price=81 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - 1/2 legs & Brazilian & Underarms" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+136.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Feet & Toes</td>
+<td>$35.00</td>
+<td class=text-danger>
+$8.00
+</td>
+<td class=text-danger>
+$8.00
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Feet & Toes" data-item-price=8 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[draft:false items:[map[draft:false online:30 online3:27 price:50 title:Full Face] map[draft:false online:20 online3:17 price:33 title:Side of Face] map[online:35.4 online3:30 price:59 title:Face & Neck] map[online:8 online3:8 price:15 title:Lip] map[online:8 online3:8 price:15 title:Chin] map[online:10 online3:10 price:20 title:Lip & Chin] map[online:15 online3:11 price:25 title:Forehead] map[online:8 online3:8 price:15 title:Ears] map[online:14 online3:11.5 price:22 title:Cheeks] map[online:84 online3:78.5 price:140 title:Chest & Stomach] map[online:57 online3:50.5 price:95 title:Chest] map[online:57 online3:50.5 price:95 title:Stomach] map[online:77.4 online3:64 price:129 title:1/2 back] map[online:84 online3:69.5 price:140 title:Back & Shoulders]] title:Upper Body] map[draft:false items:[map[online:22.5 online3:20 price:45 title:Female Brazilian] map[online:25 online3:22.5 price:50 title:Female Brazilian + Under Arms] map[online:10 online3:10 price:20 title:Bikini Line] map[online:66 online3:55.5 price:110 title:Legs (1/2)] map[online:84 online3:79.5 price:140 title:Legs (full)] map[online:89.4 online3:84.5 price:149 title:Full legs & Brazilian & Underarms] map[online:81 online3:72.5 price:135 title:1/2 legs & Brazilian & Underarms] map[online:8 online3:8 price:35 title:Feet & Toes]] title:Lower Body]] draft:false title:Laser Hair Removal] - Lower Body - Feet & Toes" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+16] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade border-start border-end border-bottom" id=nav-1 role=tabpanel aria-labelledby=nav-1-tab>
+<div class="accordion accordion-flush" id=accordion-1>
+<div class=accordion-item>
+<h2 class=accordion-header id=heading-0>
+<button class=accordion-button type=button data-bs-toggle=collapse data-bs-target=#collapse-0 aria-expanded=true aria-controls=collapse-0>
+LED Light Therapy
+</button>
+</h2>
+<div id=collapse-0 class="accordion-collapse collapse show" aria-labelledby=heading-0 data-bs-parent=#accordion-1>
+<div class="accordion-body p-0">
+<table class="table table-hover table-responsive-sm">
+<thead>
+<tr>
+<th scope=col width="30%  ">Item</th>
+<th scope=col width="15%  ">Was</th>
+<th scope=col width="15%  ">Price</th>
+<th scope=col width="15%  ">Buy 3</th>
+<th scope=col width="25%  ">Buy Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yellow LED light</td>
+<td>$66.00</td>
+<td class=text-danger>
+$39.00
+</td>
+<td class=text-danger>
+$30.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Yellow LED light" data-item-price=39 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[items:[map[online:39 online3:30.5 price:66 title:Yellow LED light] map[online:39 online3:30.5 price:66 title:Blue LED light]] title:LED Light Therapy] map[items:[map[online:53 online3:45.5 price:85 title:Hydrodermabrasion (Face)] map[online:57 online3:47.5 price:95 title:hydrodermabrasion (Face+neck)]] title:Hydrodermabrasion]] title:Skin Treatments] - LED Light Therapy - Yellow LED light" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+52.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>Blue LED light</td>
+<td>$66.00</td>
+<td class=text-danger>
+$39.00
+</td>
+<td class=text-danger>
+$30.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Blue LED light" data-item-price=39 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[items:[map[online:39 online3:30.5 price:66 title:Yellow LED light] map[online:39 online3:30.5 price:66 title:Blue LED light]] title:LED Light Therapy] map[items:[map[online:53 online3:45.5 price:85 title:Hydrodermabrasion (Face)] map[online:57 online3:47.5 price:95 title:hydrodermabrasion (Face+neck)]] title:Hydrodermabrasion]] title:Skin Treatments] - LED Light Therapy - Blue LED light" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+52.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h2 class=accordion-header id=heading-1>
+<button class="accordion-button collapsed" type=button data-bs-toggle=collapse data-bs-target=#collapse-1 aria-expanded=true aria-controls=collapse-1>
+Hydrodermabrasion
+</button>
+</h2>
+<div id=collapse-1 class="accordion-collapse collapse" aria-labelledby=heading-1 data-bs-parent=#accordion-1>
+<div class="accordion-body p-0">
+<table class="table table-hover table-responsive-sm">
+<thead>
+<tr>
+<th scope=col width="30%  ">Item</th>
+<th scope=col width="15%  ">Was</th>
+<th scope=col width="15%  ">Price</th>
+<th scope=col width="15%  ">Buy 3</th>
+<th scope=col width="25%  ">Buy Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydrodermabrasion (Face)</td>
+<td>$85.00</td>
+<td class=text-danger>
+$53.00
+</td>
+<td class=text-danger>
+$45.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="Hydrodermabrasion (Face)" data-item-price=53 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[items:[map[online:39 online3:30.5 price:66 title:Yellow LED light] map[online:39 online3:30.5 price:66 title:Blue LED light]] title:LED Light Therapy] map[items:[map[online:53 online3:45.5 price:85 title:Hydrodermabrasion (Face)] map[online:57 online3:47.5 price:95 title:hydrodermabrasion (Face+neck)]] title:Hydrodermabrasion]] title:Skin Treatments] - Hydrodermabrasion - Hydrodermabrasion (Face)" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+83.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+<tr>
+<td>hydrodermabrasion (Face+neck)</td>
+<td>$95.00</td>
+<td class=text-danger>
+$57.00
+</td>
+<td class=text-danger>
+$47.50
+</td>
+<td>
+<button class="snipcart-add-item btn btn-primary" data-item-id="hydrodermabrasion (Face+neck)" data-item-price=57 data-item-url=/modules/store-price/ data-item-description="Pre-purchase skin treatments online" data-item-name="map[categories:[map[items:[map[online:39 online3:30.5 price:66 title:Yellow LED light] map[online:39 online3:30.5 price:66 title:Blue LED light]] title:LED Light Therapy] map[items:[map[online:53 online3:45.5 price:85 title:Hydrodermabrasion (Face)] map[online:57 online3:47.5 price:95 title:hydrodermabrasion (Face+neck)]] title:Hydrodermabrasion]] title:Skin Treatments] - Hydrodermabrasion - hydrodermabrasion (Face+neck)" data-item-custom1-name="Buy 3 and Save" data-item-custom1-options=No|Yes[+85.5] data-item-max-quantity=2 data-item-shippable=false>
+Buy Now
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container-fluid d-none d-sm-block" id=footer>
+<div class="row bg-dark text-light p-3">
+<div class="col small">
+Powerful Web Design &nbsp;&copy;&nbsp;<span id=year>&nbsp;</span></div>
+</div>
+</div>
+<script>document.getElementById("year").innerHTML=(new Date).getFullYear()</script>
+</footer>
+</body>
+</html>

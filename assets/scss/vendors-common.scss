@@ -1,0 +1,74 @@
+/*! purgecss start ignore */
+
+// Bootstrap 5 classes dependency - require after bootstrap
+
+// NO-JS support for vendors
+
+// LAZYSIZES
+//
+// Disable lazyload images to browser can fallback to noscript tags below image
+.no-js img.lazyload {
+  display: none;
+}
+// lazysizes responsive images
+img[data-sizes='auto'] {
+  display: block;
+  width: 100%;
+}
+figure {
+  display: block !important;
+}
+// // lazysizes blur up css
+// .js .lazyload,
+// .lazyloading {
+//   filter: blur(3px);
+// }
+// .js .lazyloaded {
+//   filter: none;
+//   transition: filter 1s;
+// }
+
+//SWIPER
+//no-js support - creates grid from slideshow
+// .no-js {
+//   .swiper {
+//     &-button-next,
+//     &-button-prev,
+//     &-pagination {
+//       display: none;
+//     }
+//     &-container {
+//      // empty
+//     }
+//     &-wrapper {
+//       //@extend .row;
+//       display: flex;
+//       flex-wrap: wrap;
+//       margin: 1rem;
+//       & > * {
+//         flex-shrink: 0;
+//         width: 100%;
+//         max-width: 100%;
+//         padding-right: 1rem;
+//         padding-left: 1rem;
+//         margin-top: 1rem;
+//       }
+//     }
+//     &-slide {
+//       //@extend .col-12, .col-sm-6, .col-md-3, .p-2;
+//       height: auto;
+//       padding: 0.5rem;
+//       flex: 0 0 auto;
+//       @media (min-width: 576px) {
+//         //sm
+//         width: 25%;
+//       }
+//       @media (min-width: 768px) {
+//         //md
+//         width: 50%;
+//       }
+//     }
+//   }
+// }
+
+/*! purgecss end ignore */

@@ -3,9 +3,10 @@ title: "Powerful Web Design"
 module:
   #replacement in dev folder
   imports:
-    - path: "github.com/powerfulweb/hugo-common" 
-    - path: "github.com/future-wd/hugo-image"
-    - path: "github.com/future-wd/hugo-svg-font"
+  #- path: "github.com/powerfulweb/hugo-common" 
+  - path: "github.com/future-wd/hugo-image"
+  - path: "github.com/future-wd/hugo-svg-font"
+  - path: "github.com/future-wd/hugo-snipcart/v3"
 baseurl: "https://demo.powerfulwebdesign.com.au"
 
 #buildDrafts: true #(false)

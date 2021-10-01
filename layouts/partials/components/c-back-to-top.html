@@ -1,0 +1,9 @@
+{{/* usage {{ partial "components/c-back-to-top" "[icon path]" }}
+     example  {{ partial "components/c-back-to-top" "icons/font-awesome/solid/chevron-up.svg" }} */}}
+
+{{/*  only display on SM and up  */}}
+<div class="d-none d-sm-block">
+  <a class="c-to-top is-hidden u-fade-in" id="js-topNav" href="#top">
+    {{ partial "scripts/svg-inline.html" . }}
+  </a>
+</div>

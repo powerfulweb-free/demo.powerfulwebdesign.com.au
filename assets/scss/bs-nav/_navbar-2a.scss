@@ -1,0 +1,74 @@
+/* ============================= 
+    NAVBAR 2 - BASE THEME
+================================ */
+.navbar {
+  //background: $body-bg; //defaults to body bg
+  &-brand {
+    font-weight: 600; //not available as bs variable
+  }
+}
+@include media-breakpoint-down(lg) {
+  .navbar {
+    &-toggler {
+      border: none;
+    }
+
+    &-toggler-icon {
+      //background: $primary;
+      // already set by bs5
+    }
+
+    &-brand {
+      // centers logo
+      // width: 98vw;
+      // position: absolute;
+      // top: 0;
+      // overflow-x: hidden;
+
+      img {
+        // display: block;
+        // margin: auto;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .is-collapsed {
+    box-shadow: 0 30px 30px 5px rgba(0, 0, 0, 0.05) !important;
+    .navbar-nav {
+      .nav-item > a {
+        padding: 1rem 1rem; //collapsed padding size
+        @include transition(0.3s); //animates collapse
+      }
+    }
+  }
+  .navbar {
+    padding: 0;
+    background: $body-bg;
+
+    .navbar-nav {
+      .nav-item > a {
+        padding: 1.8rem 1rem; //EXPANDED PADDING
+        @include transition(1s); //animates expansion
+        //border-bottom: 2px solid transparent;
+
+        &:hover {
+          //background: tint-color($primary, 90%);
+          //border-color: $primary;
+        }
+
+        &.active {
+          //background: rgba($gray-300, .2);
+          //border-color: $secondary;
+        }
+      }
+      .dropdown-menu {
+        //removed default padding top and bottom of
+        //padding: 0;
+      }
+    }
+  }
+
+  
+}

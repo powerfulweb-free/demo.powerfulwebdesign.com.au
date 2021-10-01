@@ -9,4 +9,8 @@
 {{ partial "scripts/libsass" "scss/gallery.scss" }}
 {{ end }}   */}}
 
-{{ partial "components/snipcart/3.2.0/stylesheet" . }}  
+{{ if or (eq .Type "store-list") (eq .Type "store-price") }}
+{{ partialCached "snipcart/css" . }}
+      {{ end }}
+
+

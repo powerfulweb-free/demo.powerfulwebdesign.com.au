@@ -1,0 +1,161 @@
+{{ define "main" }}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="pb-3">{{ .Title }}</h2>
+      {{ with .Params.subtitle }}
+      <div class="h4 text-primary pb-2">{{ . }}</div>
+      {{ end }}
+      <!-- <div class="text-body">{{ .Content | markdownify }}</div> -->
+    </div>
+  </div>
+  {{ with .Site.Data.prices }}
+    <nav>
+      <div class="mx-sm-3 nav nav-tabs" id="nav-tab" role="tablist">
+        {{ range $index, $treatment := .treatments}}{{ if not .draft }}
+          <button
+            class="nav-link {{ if eq $index 0 }} active {{ end }}"
+            id="nav-{{ $index }}-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-{{ $index }}"
+            type="button"
+            role="tab"
+            aria-controls="nav-{{ $index }}"
+            aria-selected="true"
+          >
+            {{ $treatment.title }}
+          </button>
+
+        {{ end }} {{ end }}
+      </div>
+    </nav>
+
+    <div class="mx-sm-3 tab-content pb-3" id="nav-tabContent">
+      {{ range $index, $treatment := .treatments}}{{ if not .draft }}
+        <div
+          class="tab-pane fade {{ if eq $index 0 }} show active {{ end }} border-start border-end border-bottom"
+          id="nav-{{ $index }}"
+          role="tabpanel"
+          aria-labelledby="nav-{{ $index }}-tab">
+          <div class="accordion accordion-flush " id="accordion-{{ $index }}">
+            {{ range $indexCategory, $category := .categories }}{{ if not .draft }}
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-{{ $indexCategory }}">
+                  <button class="accordion-button {{ if ne $indexCategory 0 }} collapsed{{ end }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $indexCategory }}" aria-expanded="true" aria-controls="collapse-{{ $indexCategory }}">
+                  {{ $category.title }}
+                  </button>
+                </h2>
+                <div id="collapse-{{ $indexCategory }}" class="accordion-collapse collapse {{ if eq $indexCategory 0 }} show{{ end }}" aria-labelledby="heading-{{ $indexCategory }}" data-bs-parent="#accordion-{{ $index }}">
+                  <div class="accordion-body p-0">
+                    <table class="table table-hover table-responsive-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col" width="30%  ">Item</th>
+                          <th scope="col" width="15%  ">Was</th>
+                          <th scope="col" width="15%  ">Price</th>
+                          <th scope="col" width="15%  ">Buy 3</th>
+                          <th scope="col" width="25%  ">Buy Now</th>
+                          <!-- <th scope="col"></th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{ range $category.items }} {{ if not .draft }}
+                          <tr>
+                            <td>{{ .title }}{{ with .buyOnline }}<span class="text-danger"> - On Special! <a href="/buy">Buy Now.</a></span>{{ end }}</td>
+                            <td>{{ with .price }}{{ printf "%s%.2f" "$" (float . ) }}{{ end }}</td>
+                            <td class="text-danger">
+                              {{ with .online }}{{ printf "%s%.2f" "$" (float . ) }}{{ end }}
+                            </td>
+                            <td class="text-danger">
+                              {{ with .online3 }}{{ printf "%s%.2f" "$" (float . ) }}{{ end }}
+                            </td>
+                            <!-- calculate cost of x3 returns 0 if online or online3 are not set -->
+                            {{ $3 := 0 }}
+                            {{ $ctx := . }}
+                            {{ with .online3 }}
+                              {{ $x3 := mul 3 . }}
+                                {{ with $ctx.online }}
+                                  {{ $3 = (sub $x3 . )}}
+                                {{ end }}
+                            {{ end }}
+                            <td>
+                              <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="{{ .title }}"
+                                data-item-price="{{ .online }}"
+                                data-item-url="{{ $.RelPermalink }}"
+                                data-item-description="Pre-purchase skin treatments online"
+                                {{/* data-item-image="/logo/logo.jpg" */}}
+                                data-item-name="{{print $treatment " - " $category.title " - " .title }}"
+                                {{ with $3 }}
+                                data-item-custom1-name="Buy 3 and Save"
+                                data-item-custom1-options="No|Yes[+{{ . }}]"
+                                {{ end }}
+                                data-item-max-quantity="2"
+                                data-item-shippable="false"
+                                >
+                                Buy Now
+                              </button>
+                            </td>
+                          </tr>
+                        {{ end }} {{ end }}
+                      </tbody>
+                    
+                    </table>
+                  </div>
+                </div>
+              </div>
+            {{ end }}{{ end }}
+          </div>
+
+          {{/*  
+          <div class="row">
+            <div class="col">
+              <table class="table table-hover">
+                {{ range .categories }}{{ if not .draft }}
+                  <thead>
+                    <tr class="table-light">
+                      <th colspan="5">{{ .title }}</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Price</th>
+                      <!-- <th scope="col">Online Price</th>
+                      <th scope="col">Buy 3</th>
+                      <th scope="col"></th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{ range .items }} {{ if not .draft }}
+                      <tr>
+                        <td>{{ .title }}</td>
+                        <td>{{ printf "%s%.2f" "$" (float .price ) }}</td>
+                        {{/*<td class="text-danger">
+                          {{ printf "%s%.2f" "$" (float .online ) }}
+                        </td>
+                        <td class="text-danger">
+                          {{ printf "%s%.2f" "$" (float .buy3 ) }}
+                        </td>
+                        <td class="paypal-button">
+                          {{ $ctx := . }}{{ if not .paypalOff }}{{ $ctx.paypal |
+                          safeHTML }}{{ end }}
+                        </td> 
+                      </tr>
+                    {{ end }} {{ end }}
+                  </tbody>
+                {{ end }}{{ end }}
+              </table>
+            </div>
+          </div>
+         */}}
+        </div>  
+      {{ $index = add $index 1 }} 
+      {{ end }} {{ end }} <!--   end treatments -->
+    </div>
+   
+  {{ end }}  <!-- end data -->
+
+
+
+</div>
+{{ end }}
+  

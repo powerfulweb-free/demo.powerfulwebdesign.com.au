@@ -1,0 +1,85 @@
+{{/*   23/6/21 depreciated  
+  
+  
+  
+  
+  {{ partial "components/c-contact-form.html" . }}   
+formFieldsSplit  - range items (group of fields at the top of the form)
+formFields - range items for full width ( appears below formFieldsSplit)
+formTextareas - for textarea inputs (comes last on form)
+
+css:
+bs5 forms
+is-hidden 
+u-fade-in
+c-contact-form 
+*/}}
+
+
+<form id="{{ .Params.formId }}" class="c-contact-form needs-validation" enctype="multipart/form-data">
+  {{if .Params.formFieldsSplit }}
+  <div class="c-contact-form__row">
+    {{ range .Params.formFieldsSplit }}
+    <div class="c-contact-form__col">
+      <div class="c-contact-form__group">
+        {{ $ctx := . }}
+        {{ with .label}}
+        <label for="{{- $ctx.id -}}" class="form-label">{{ . }}{{ if $ctx.requiredDot }}<span class="text-danger"> *</span></span>{{ end }}</label>
+        {{ end }}
+        <input id="{{- .id -}}" name="{{- .name -}}" type="{{- .type -}}" class="form-control"
+          placeholder="{{- .placeholder -}}" aria-label="{{- .placeholder -}}" 
+          {{with .minlength }} minlength="{{- . -}}"{{ end }}{{ if .required }} required{{ end }}
+          {{ if .autofocus }} autofocus{{ end }}>
+        {{ with .invalidFeedback }}
+        <div class="invalid-feedback">
+          {{- . -}}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ range .Params.formFields }}
+  <div class="c-contact-form__group">
+    {{ $ctx := . }}
+    {{ with .label}}
+    <label for="{{- $ctx.id -}}" class="form-label">{{ . }}{{ if $ctx.requiredDot }}<span class="text-danger"> *</span></span>{{ end }}</label>
+    {{ end }}
+    <input id="{{- .id -}}" name="{{- .name -}}" type="{{- .type -}}" class="form-control"
+      placeholder="{{- .placeholder -}}" aria-label="{{- .placeholder -}}" 
+      {{with .minlength }} minlength="{{- . -}}"{{ end }}{{ if .required }} required{{ end }}
+      {{ if .autofocus }} autofocus{{ end }}>
+    {{ with .invalidFeedback }}
+    <div class="invalid-feedback">
+      {{- . -}}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ range .Params.formTextareas}}
+  <div class="c-contact-form__group">
+    {{ $ctx := . }}
+    {{ with .label}}
+    <label for="{{- $ctx.id -}}" class="form-label">{{ . }}{{ if $ctx.requiredDot }}<span class="text-danger"> *</span></span>{{ end }}</label>
+    {{ end }}
+    <textarea id="{{- .id -}}" name="{{- .name -}}" class="form-control" placeholder="{{- .placeholder -}}"
+      rows="{{- .rows -}}" aria-label="{{ .placeholder }}" {{with .minlength }} minlength="{{ . }}"{{ end }} 
+      {{ if .required }} required{{ end }}{{ if .autofocus }} autofocus{{ end }}></textarea>
+    {{ with .invalidFeedback }}
+    <div class="invalid-feedback">
+      {{ . }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  <div class="c-contact-form__group">
+    <button class="btn btn-outline-primary btn-lrg mt-3" id='js-submit' disabled>Send</button>
+    <div id="js-load" class="spinner-border is-hidden" role="status"></div>
+    <noscript>Please enable javascript to use the contact form</noscript>
+  </div>
+</form>
+
+<div id="js-statusMessage" class="is-hidden u-fade-in" role="alert"></div>
+
+

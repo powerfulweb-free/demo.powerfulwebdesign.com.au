@@ -62,6 +62,9 @@
         {{ end }}
       </select>
       {{ end }}
+      {{ if or (eq .Type "store-list") (eq .Type "store-price") }}
+        {{ partialCached "header/cart" . }}
+      {{ end }}
     </div>
   </div>
 </nav>

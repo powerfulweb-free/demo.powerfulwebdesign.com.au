@@ -10,6 +10,12 @@
 {{- if eq .Type "templates" -}}
 {{- partial "esbuild" (dict "src" "js/templates.js") -}}
 {{- end -}}
-
+{{- if and (eq .Type "store-list") (eq .Kind "page") -}}
+{{- partial "esbuild" (dict "src" "js/swiper.js") -}}
+{{- end -}}
 {{/* partial "esbuild" (dict "src" "js/lazysizes.js") */}}
+{{ if or (eq .Type "store-list") (eq .Type "store-price") }}
+{{ partialCached "snipcart/js" . }}
+{{ end }}
+
 

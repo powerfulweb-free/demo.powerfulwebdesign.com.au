@@ -1,0 +1,35 @@
+<a class="twitter-timeline" 
+data-lang="{{ substr .Site.LanguageCode 0 2 }}" 
+{{ with .Site.Params.twitterFeed.height }}
+data-height="{{ . }}" {{ end }}
+{{ with .Site.Params.twitterFeed.width }}
+data-width="{{ . }}"  {{ end }}
+{{ with .Site.Params.twitterFeed.dark }}
+data-theme="dark" {{ end }}
+href="https://twitter.com/{{- .Site.Social.twitter -}}?ref_src=twsrc%5Etfw">Tweets by {{- .Site.Social.twitterName -}}</a> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+{{/*
+  {{ partial "embed/c-twitter-feed.html" . }} 
+
+## config.yml
+social:
+  twitter: elonmusk
+  twitterName: Elon Musk
+##ADD TO SITE.PARAMS 
+##TWITTER EMBEDS 
+##SEE https://publish.twitter.com/#
+
+#twitter-feed partial
+twitterFeed:
+  dark: false # enable dark theme (FALSE)
+  height: "800" #(NULL)
+  width: "" #(NULL)
+#twitter follow button options
+twitterFollow:
+  largeButton: true #large button (FALSE)
+  
+  
+  */}}
+
+
