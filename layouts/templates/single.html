@@ -16,13 +16,7 @@
         {{ $title := (humanize .id) }}
         {{ $ctx := . }}
         {{ with $.Resources.GetMatch (printf "images/%s.png" .id) }}
-        {{ partial "image" (dict "page" $ "src" . "title" $title 
-        "class" "card-img-top" "layout" "responsive" 
-        "fillRatio" (slice 3 2)
-        "test" "hello"
-        "widths" (slice 220 350 440 700 500)
-        "sizes" "(min-width:992px)25vw,(min-width:576px)33.3vw,50vw"
-         )}}
+        {{ partial "image" (dict "page" $ "src" . "title" $title "class" "card-img-top" "layout" "responsive" "fillRatio" (slice 3 2) "test" "hello" "widths" (slice 220 350 440 700 500) "sizes" "(min-width:992px)25vw,(min-width:576px)33.3vw,50vw" )}}
         {{ end }}
         <div class="card-body">
           <h5 class="card-title">{{ $title }}</h5>
