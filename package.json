@@ -52,7 +52,7 @@
     "lint:markdown": "markdownlint *.md content/**/*.md",
     "npm-check": "npx npm-check -u",
     "hugo-version": "exec-bin node_modules/.bin/hugo/hugo version",
-    "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
+
     "release": "standard-version",
     "release:dry-run": "standard-version --dry-run"
   }
