@@ -1,11 +1,7 @@
-
-
-
-
 [build]
 publish = "public"
 command = "hugo --gc --minify"
-HUGO_VERSION = "0.83.1"
+HUGO_VERSION = "0.88.1"
 HUGO_ENABLEGITINFO = "true"
 NODE_VERSION = "14.18.0"
 NPM_VERSION = "7.2.0"
