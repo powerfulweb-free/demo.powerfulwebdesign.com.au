@@ -3,8 +3,8 @@ publish = "public"
 command = "hugo --gc --minify"
 HUGO_VERSION = "0.89.4"
 HUGO_ENABLEGITINFO = "true"
-NODE_VERSION = "16"
-NPM_VERSION = "7.2.0"
+NODE_VERSION = "17.1.0"
+NPM_VERSION = "8.1.4"
 
 [context.production.environment]
 HUGO_ENV = "production"
