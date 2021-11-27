@@ -26,8 +26,7 @@
     {{ range $index, $element := .Resources.ByType "image" }}
     <div class="col-6 col-md-4 col-xl-3 pb-3 px-2 js-masonry-item">
       {{ partial "image" (dict "page" $ "src" $element "title" $.Title
-       "class" "" "data" (printf
-      "data-bs-target='#js-imageCarousel' data-bs-slide-to='%v'" $index)
+       "data" (printf "data-bs-target='#js-imageCarousel' data-bs-slide-to='%v'" $index)
       "sizes" "(min-width:1200px, 25vw), (min-width:768px, 33.33vw), 50vw" "maxWidth" 1150
       "widths" (slice 380 570 760 900)  ) }}
     </div>
