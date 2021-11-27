@@ -10,7 +10,7 @@
 {{ end }}   */}}
 
 {{ if or (eq .Type "store-list") (eq .Type "store-price") }}
-{{ partialCached "snipcart/css" . }}
-      {{ end }}
+  {{ partialCached "snipcart/css" . }}
+{{ end }}
 
 
