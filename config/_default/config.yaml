@@ -1,7 +1,7 @@
 title: "Powerful Web Design"
 
 module:
-  #replacement in dev folder
+  #replacement in dev config folder
   imports:
   #- path: "github.com/powerfulweb/hugo-common" 
   - path: "github.com/future-wd/hugo-image"
