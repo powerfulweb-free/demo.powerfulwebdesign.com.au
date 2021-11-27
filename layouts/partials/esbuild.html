@@ -6,7 +6,8 @@
 {{- if eq (hugo.Environment) "development" -}}
   {{- $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "sourceMap" "inline") | fingerprint "sha512" -}}
 {{- else if .transpile -}}
-  {{- $js = resources.Get $src | js.Build | babel (dict "noComments" true "minified" true "compact" true "config" "config/babel.config.js") | fingerprint "sha512" -}}
+  {{- $babelOpts := (dict "noComments" true "minified" true "compact" true "config" "config/babel.config.js") -}}
+  {{- $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "minify" true ) | babel $babelOpts | fingerprint "sha512" -}}
 {{- else -}}
   {{- $js = resources.Get $src | js.Build (dict "targetPath" $targetPath "minify" true ) | fingerprint "sha512" -}}
 {{- end -}}
