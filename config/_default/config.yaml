@@ -5,7 +5,7 @@ module:
   imports:
   #- path: "github.com/powerfulweb/hugo-common" 
   - path: "github.com/future-wd/hugo-image"
-  - path: "github.com/future-wd/hugo-svg-font"
+  - path: "github.com/future-wd/hugo-svg-font/v2"
   - path: "github.com/future-wd/hugo-snipcart/v3"
 baseurl: "https://demo.powerfulwebdesign.com.au"
 

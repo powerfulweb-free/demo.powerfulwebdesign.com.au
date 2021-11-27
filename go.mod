@@ -6,4 +6,5 @@ require (
 	github.com/future-wd/hugo-image v0.1.4 // indirect
 	github.com/future-wd/hugo-snipcart/v3 v3.1.2 // indirect
 	github.com/future-wd/hugo-svg-font v0.9.2 // indirect
+	github.com/future-wd/hugo-svg-font/v2 v2.3.2 // indirect
 )
